@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+	body {
+		margin: 0;
+		box-sizing: border-box;
+		background: lightblue;
+		width: 1858px;
+		height: 959px;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+	#whole_section {
+		background: lightpink;
+		margin: 0 auto;
+		width: 1000px;
+		height: 700px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	#form_section {
+		background: black;
+		width: 500px;
+		height: 350px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	
+	input, label, legend {
+		color: white;
+		font-size: 2em;
+		font-family: consolas;
+	}
+	
+	#field1 {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	
+	div[id^=chk] {
+		display: flex;
+		justify-content: space-between;
+	}
+	
+	
+</style>
+<script>
+
+	
+	
+
+	window.onload = function() {
+		
+		console.log(`높이: ${window.innerHeight} 넓이: ${window.innerWidth}`);
+		
+		let frm = document.querySelector("#forms");
+		let req_btn = document.getElementById("submit_btn");
+		
+		console.log(frm.action + "," + req_btn.name);
+		
+		req_btn.onclick = function(e) {
+			console.log("작동");
+			alert("확인");
+			frm.submit();
+			
+			
+		}
+		
+		/* req_btn.addEventListener("mouseclick", function(e) {
+			
+			console.log("작동");
+			alert("확인");
+			frm.submit();
+			
+			
+		}); */
+		
+	}
+
+</script>
+</head>
+<body>
+	
+	<div id=whole_section>
+		<div id="form_section">
+			<form id="forms" method="post" action="./req">
+				<fieldset id="field1">
+					<legend style="text-align: center">도서 신청</legend>
+					
+					<div id="chk1">
+						<input type="checkbox" name="bookrqst" id="book1" value="C#_txtbook">
+						<label for=book1>C# 교과서</label>
+					</div>
+					<div id="chk2">
+						<input type="checkbox" name="bookrqst" id="book2" value="Node.js_txtbook">
+						<label for=book2>Node.js 교과서</label>
+					</div>
+					
+					<div id="chk3">
+						<input type="checkbox" name="bookrqst" id="book3" value="어도비XD_txtbook">
+						<label for=book3>어도비XD 교과서</label>
+					</div>
+					<br>
+					
+					<input type="button" name="submit_btn" id="submit_btn" value="신청">
+					<input type="reset" name="reset_btn" id="reset_btn" value="취소">
+					
+				</fieldset>
+			
+			</form>
+		
+		
+		
+		
+		</div>
+	
+	
+	
+	
+	
+	
+	</div>
+	
+	
+	
+</body>
+</html>
