@@ -35,7 +35,7 @@ dependencies {
 tasks.named('bootBuildImage') {
 	builder = 'paketobuildpacks/builder-jammy-base:latest'
 }
-
+// 갑자기 튀어나오는 주석 빠밤
 tasks.named('test') {
 	useJUnitPlatform()
 }
